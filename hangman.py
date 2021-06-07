@@ -53,10 +53,10 @@ def shape(number):
         cprint(('\t'*6+' ||\n')*8,'white')
     elif number==2:
         cprint('\t'*6+' ____________________','white')
-        cprint(('\t'*6+ ' |                   |\n')*3,'white')
-        cprint('\t'*6+' |                   O','green')
-        cprint('\t'*6+' |                  /','green')
-        cprint(('\t'*6+' |\n')*7,'white')
+        cprint(('\t'*6+ ' ||                   |\n')*3,'white')
+        cprint('\t'*6+' ||                   O','green')
+        cprint('\t'*6+' ||                  /','green')
+        cprint(('\t'*6+' ||\n')*7,'white')
     elif number==3:
         cprint('\t'*6+' ____________________','white')
         cprint(('\t'*6+' ||                   |\n')*3,'white')
