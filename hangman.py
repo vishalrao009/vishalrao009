@@ -1,4 +1,5 @@
 # let us create a game : how about hangman
+# you will have to guess letters of given word, 6 incorrect guess and you are out.
 # the game require us to choose a word by host and a clue / class the word belong to,
 # the guesser will ask for specific letters if letters are present in word, if the guess is wrong, 
 # player proceed to journey of hanging
