@@ -1,5 +1,4 @@
 # let us create a game : how about hangman
-# you will have to guess letters of given word, 6 incorrect guess and you are out.
 # the game require us to choose a word by host and a clue / class the word belong to,
 # the guesser will ask for specific letters if letters are present in word, if the guess is wrong, 
 # player proceed to journey of hanging
@@ -9,9 +8,9 @@
 # let us keep the host our program / computer
 
 # let us store a dictionary with key and respective requred words
-
 import sys
 from termcolor import cprint, colored
+from time import *
 
 
 keys=['fruit','sport','indoor_games','color','animal','bird','music','computer_brand','smartphone_brand']
@@ -54,7 +53,7 @@ def shape(number):
         cprint(('\t'*6+' ||\n')*8,'white')
     elif number==2:
         cprint('\t'*6+' ____________________','white')
-        cprint(('\t'*6+ ' ||                   |\n')*3,'white')
+        cprint(('\t'*6+ ' ||                  |\n')*3,'white')
         cprint('\t'*6+' ||                   O','green')
         cprint('\t'*6+' ||                  /','green')
         cprint(('\t'*6+' ||\n')*7,'white')
@@ -117,7 +116,7 @@ def organize_hangman(random_word,word_class):
             absent_letters+=guess+','
             cprint('\n Absent words/letters:\t'+absent_letters.upper()+'\n','red')
             if failed_count==6:
-                cprint('You lost: word was-  '+random_word,'magenta')    
+                cprint('You lost: word was-  '+random_word,'magenta')
                 break
                 
                 
@@ -126,10 +125,12 @@ def organize_hangman(random_word,word_class):
 master_key={'fruit':values_fruit,'sport':values_sports,'indoor_games':values_indoor_games,'color':values_color,'animal':values_animal,'bird':values_bird,'music':values_music,'computer_brand':values_computer_brand,'smartphone_brand':values_smartphone_brand}
 import random as rd
 while(True):
-    entry=input('Press enter to play hangman, if not enter anything ')
+    entry=input(' Press enter to play hangman (will start with clean terminal)')
+    print('\x1bc')
     if entry=='':
-        player_mode=int(input('enter player mode, 1 for single player, 2 for 2 players: '))
-        if player_mode==1:
+        player_mode=input('enter player mode:\n\t Single Player: Enter 1 \n\t For 2 players: Enter 2 \n\t To quit: Enter anything else or just press enter :  ')
+        if player_mode=='1':
+            print('\x1bc')
 
             random_key_position=rd.randint(0,len(keys)-1)
             random_class=keys[random_key_position]             # choosing random key/class of word
@@ -140,11 +141,15 @@ while(True):
             organize_hangman(chosen_word,random_class)                   # calling our function to organise game:
 
                         
-        elif player_mode==2:
+        elif player_mode=='2':
             random_class=input('Host please enter the category of word it belongs to :')
             chosen_word=input('Please enter the word to ask ')
             print('\x1bc')
             organize_hangman(chosen_word,random_class)
+
+        else:
+            print('\x1bc')
+            break
             
             
 
