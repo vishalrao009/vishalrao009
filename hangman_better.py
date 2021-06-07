@@ -1,5 +1,5 @@
 # let us create a game : how about hangman
-# this is the letter guessing game and it gives you max 6 wrong guesses.
+# this is the letter guessing game and it gives you max 6 wrong attempts.
 # the game require us to choose a word by host and a clue / class the word belong to,
 # the guesser will ask for specific letters if letters are present in word, if the guess is wrong, 
 # player proceed to journey of hanging
