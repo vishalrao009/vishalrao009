@@ -1,5 +1,5 @@
 # let us create a game : how about hangman
-# this is the letter guessing game and it gives you max 6 wrong attempts.
+# this is the letter guessing game and it gives you max 6 wrong guesses.
 # the game require us to choose a word by host and a clue / class the word belong to,
 # the guesser will ask for specific letters if letters are present in word, if the guess is wrong, 
 # player proceed to journey of hanging
@@ -156,19 +156,21 @@ def single_play():
  
     word_list=master_key[random_class]                 # selecting the list of perticular class of word
     random_value_position=rd.randint(0,len(word_list)-1)        # choosing random no for that list            
-    chosen_word=word_list[random_value_position]                    # this is the choosen word that player has to guess         
+    chosen_word=word_list[random_value_position] 
+    chosen_word=chosen_word.lower()                   # this is the choosen word that player has to guess         
     organize_hangman(chosen_word,random_class)                   # calling our function to organise game:
              
 
 def double_play():
     random_class=input('Host should enter the category of word it belongs to :')
-    chosen_word=input('Please enter the word to ask ')
+    chosen_word=input('Please enter the word to ask ').lower()
+
     print('\x1bc')
     organize_hangman(chosen_word,random_class)
 
 
 # main program: starts form here: best is to write expected functions below and then create such functions
-def run_daemon():
+def run_deamon():
     player_mode=player_mode_input()      # it will take input choices from user
     if player_mode=='1' or player_mode=='2':
         while(True):
@@ -204,6 +206,6 @@ def run_daemon():
         cprint(' \t\t Thanks for playing/trying hangman  '+'\t'*10,'white','on_magenta')
         
 
-# let us run our daemon now:
+# let us run our deamon now:
 cprint('\n\n\t\t Warning: Hangman will start in clean terminal   \n','cyan')
-run_daemon()                 # this is our main command.
+run_deamon()                 # this is our main command.
